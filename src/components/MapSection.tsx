@@ -4,8 +4,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const MapSection = () => {
-  // Jadavpur University, Kolkata coordinates for the embed
-  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.101137021356!2d88.36888427602055!3d22.49103853585724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271237f3876c1%3A0x733658f837471243!2sJadavpur%20University!5e0!3m2!1sen!2sin!4v1713875000000!5m2!1sen!2sin";
+  // Jadavpur University, Kolkata - Satellite View
+  const mapEmbedUrl = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.101137021356!2d88.36888427602055!3d22.49103853585724!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0271237f3876c1%3A0x733658f837471243!2sJadavpur%20University!5e0!3m2!1sen!2sin!4v1713875000000!5m2!1sen!2sin&maptype=satellite";
 
   return (
     <section id="location" className="py-24 px-6 md:px-12 bg-black/50">
@@ -29,7 +29,7 @@ const MapSection = () => {
           transition={{ duration: 0.6 }}
           className="relative glass-effect p-2 md:p-4 overflow-hidden group shadow-[0_0_30px_rgba(59,130,246,0.1)]"
         >
-          <div className="aspect-video w-full rounded-lg overflow-hidden grayscale invert brightness-90 opacity-80 group-hover:opacity-100 transition-all duration-700">
+          <div className="aspect-video w-full rounded-lg overflow-hidden transition-all duration-700">
             <iframe 
               src={mapEmbedUrl}
               width="100%" 
