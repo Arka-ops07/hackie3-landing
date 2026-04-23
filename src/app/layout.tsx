@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import CustomCursor from "@/components/CustomCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "HackIE³ | The Future of Innovation",
-  description: "Join the most futuristic hackathon of 2026. Innovate, Create, Elevate.",
+  description: "Join the most futuristic hackathon of 2026 at Jadavpur University. Innovate, Create, Elevate.",
 };
 
 export default function RootLayout({
@@ -27,7 +28,10 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} antialiased`}
     >
-      <body className="bg-[#0a0a0a] text-[#ededed]">{children}</body>
+      <body className="bg-[#0a0a0a] text-[#ededed] overflow-x-hidden">
+        <CustomCursor />
+        {children}
+      </body>
     </html>
   );
 }

@@ -15,7 +15,12 @@ export default function Home() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen relative">
+      {/* Holographic Scanline Effect */}
+      <div className="fixed inset-0 pointer-events-none z-50 overflow-hidden">
+        <div className="scanline"></div>
+      </div>
+
       <Hero onRegisterClick={() => setIsModalOpen(true)} />
       <About />
       <Highlights />

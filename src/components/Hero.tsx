@@ -19,8 +19,8 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
   // Parallax transforms
   const tileX = useTransform(springX, [-500, 500], [-10, 10]);
   const tileY = useTransform(springY, [-500, 500], [-10, 10]);
-  const bgX = useTransform(springX, [-500, 500], [30, -30]);
-  const bgY = useTransform(springY, [-500, 500], [30, -30]);
+  const bgX = useTransform(springX, [-500, 500], [20, -20]);
+  const bgY = useTransform(springY, [-500, 500], [20, -20]);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -37,7 +37,7 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
 
   return (
     <section id="hero" className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden pt-20 bg-[#0a0a0a]">
-      {/* Top Left Logo */}
+      {/* Top Left Logo - Fixed to use the transparent version */}
       <div className="fixed top-6 left-6 z-50">
         <motion.div
           whileHover={{ scale: 1.1, rotate: 5 }}
@@ -50,17 +50,17 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
             alt="HackIE3 Logo" 
             width={60} 
             height={60} 
-            className="drop-shadow-[0_0_20px_rgba(34,197,94,0.8)]"
+            className="drop-shadow-[0_0_15px_rgba(34,197,94,0.5)]"
           />
         </motion.div>
       </div>
 
-      {/* Background Elements */}
+      {/* Background Elements - Refined/Less Radiant Glow */}
       <div className="absolute inset-0 z-0 flex items-center justify-center">
-        {/* Massive Blurred Background Logo with Intense Green Neon Glow */}
+        {/* Balanced Background Logo with Controlled Green Neon Glow */}
         <motion.div
           style={{ x: bgX, y: bgY }}
-          className="relative w-[800px] h-[800px] md:w-[1400px] md:h-[1400px] opacity-40 blur-3xl pointer-events-none"
+          className="relative w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] opacity-25 blur-2xl pointer-events-none"
         >
           <Image 
             src="/images/logo.png" 
@@ -68,39 +68,38 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
             fill
             className="object-contain"
           />
-          {/* Intense Radiating Green Neon Light */}
-          <div className="absolute inset-0 bg-green-500/40 rounded-full blur-[180px] animate-pulse"></div>
-          <div className="absolute inset-0 bg-green-400/20 rounded-full blur-[260px]"></div>
-          <div className="absolute inset-0 bg-green-600/10 rounded-full blur-[320px]"></div>
+          {/* Refined Radiating Green Neon Light */}
+          <div className="absolute inset-0 bg-green-500/20 rounded-full blur-[140px] animate-pulse"></div>
+          <div className="absolute inset-0 bg-green-400/5 rounded-full blur-[200px]"></div>
         </motion.div>
         
-        {/* Animated Blobs for depth */}
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-600/10 rounded-full blur-3xl animate-blob"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
+        {/* Subtle Animated Blobs */}
+        <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-green-600/5 rounded-full blur-3xl animate-blob"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-blue-600/5 rounded-full blur-3xl animate-blob animation-delay-2000"></div>
       </div>
 
-      {/* Main Content Card (Clean Glass Tile - NO LOGO INSIDE) */}
+      {/* Main Content Card (Clean Glass Tile) */}
       <motion.div
         style={{ x: tileX, y: tileY }}
-        className="relative z-10 glass-effect p-12 md:p-24 text-center max-w-4xl mx-auto border-white/10 shadow-[0_0_100px_rgba(0,0,0,0.8)]"
+        className="relative z-10 glass-effect p-10 md:p-20 text-center max-w-4xl mx-auto border-white/10 shadow-[0_0_60px_rgba(0,0,0,0.7)]"
         initial={{ y: 50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
-        <h1 className="text-6xl md:text-9xl font-bold mb-8 text-white tracking-tighter drop-shadow-2xl">
+        <h1 className="text-6xl md:text-8xl font-bold mb-8 text-white tracking-tighter drop-shadow-xl">
           HackIE³
         </h1>
-        <p className="text-xl md:text-3xl text-green-100/90 mb-14 font-light max-w-2xl mx-auto leading-relaxed">
+        <p className="text-xl md:text-2xl text-green-100/80 mb-12 font-light max-w-2xl mx-auto leading-relaxed">
           Innovate. Create. Elevate. <br />
-          <span className="text-green-400 font-semibold">Jadavpur University's</span> Premier Hackathon.
+          <span className="text-green-400 font-medium">Jadavpur University's</span> Premier Hackathon.
         </p>
         
         <motion.button
           onClick={onRegisterClick}
-          className="relative group bg-gradient-to-r from-green-600 to-blue-700 text-white px-14 py-6 rounded-full text-2xl font-bold transition-all duration-300 shadow-[0_0_40px_rgba(34,197,94,0.5)]"
+          className="relative group bg-gradient-to-r from-green-600 to-blue-600 text-white px-12 py-5 rounded-full text-2xl font-bold transition-all duration-300 shadow-[0_0_30px_rgba(34,197,94,0.3)]"
           whileHover={{ 
             scale: 1.05, 
-            boxShadow: "0 0 50px rgba(34, 197, 94, 0.8)",
+            boxShadow: "0 0 40px rgba(34, 197, 94, 0.6)",
           }}
           whileTap={{ scale: 0.95 }}
         >
@@ -115,7 +114,7 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center p-1">
+        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center p-1">
           <div className="w-1 h-2 bg-green-400 rounded-full"></div>
         </div>
       </motion.div>

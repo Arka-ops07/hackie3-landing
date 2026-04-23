@@ -40,6 +40,26 @@ body {
 }
 
 @layer utilities {
+  .scanline {
+    width: 100%;
+    height: 100px;
+    z-index: 50;
+    background: linear-gradient(
+      to bottom,
+      transparent,
+      rgba(34, 197, 94, 0.1) 50%,
+      transparent
+    );
+    opacity: 0.1;
+    pointer-events: none;
+    animation: scanline 8s linear infinite;
+  }
+
+  @keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
+  }
+
   .glass-effect {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(10px);
