@@ -1,3 +1,6 @@
+"use client";
+
+import React, { useState } from 'react';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import Highlights from '@/components/Highlights';
@@ -9,17 +12,18 @@ import RegistrationModal from '@/components/RegistrationModal';
 import Footer from '@/components/Footer';
 
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="min-h-screen">
-      
-      <Hero />
+      <Hero onRegisterClick={() => setIsModalOpen(true)} />
       <About />
       <Highlights />
       <Schedule />
       <Sponsors />
       <GifWall />
       <MapSection />
-      <RegistrationModal />
+      <RegistrationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       <Footer />
     </main>
   );

@@ -3,7 +3,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const Hero = () => {
+interface HeroProps {
+  onRegisterClick: () => void;
+}
+
+const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen overflow-hidden">
       {/* Background elements for 3D effect */}
@@ -31,8 +35,9 @@ const Hero = () => {
         <p className="text-lg md:text-xl text-gray-200 mb-8">
           Welcome to the imaginary hackathon. Innovate. Create. Elevate.
         </p>
-        {/* Placeholder for registration button */}
+        
         <motion.button
+          onClick={onRegisterClick}
           className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full text-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-lg"
           whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(129, 140, 248, 0.7)" }}
           whileTap={{ scale: 0.95 }}
