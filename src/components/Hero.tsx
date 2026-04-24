@@ -282,9 +282,8 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
       {/* Background Glow Logo — blur reduced to 50% (blur-[20px] instead of blur-2xl/40px) */}
       <div className="absolute inset-0 z-0 flex items-center justify-center">
         <motion.div
-          style={{ x: bgX, y: bgY }}
-          className="relative w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] opacity-25 pointer-events-none"
           style={{ x: bgX, y: bgY, filter: 'blur(20px)' }}
+          className="relative w-[600px] h-[600px] md:w-[1000px] md:h-[1000px] opacity-25 pointer-events-none"
         >
           <Image
             src="/images/logo.png"
