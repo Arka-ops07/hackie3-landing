@@ -33,8 +33,7 @@ export default function RootLayout({
         <FluidBackground />
         <CustomCursor />
         {children}
-        <CustomCursor />
-        {children}
+        
       </body>
     </html>
   );
