@@ -246,7 +246,7 @@ const Hero: React.FC<HeroProps> = ({ onRegisterClick }) => {
   }, [mouseX, mouseY]);
 
   return (
-    <section id="hero" className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden pt-20 bg-[#0a0a0a]">
+    <section id="hero" className="relative flex flex-col items-center justify-center min-h-screen overflow-hidden pt-20 bg-transparent">
 
       {/* Particle Field */}
       {mounted && <ParticleField />}
