@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import FluidBackground from "@/components/FluidBackground";
+import CircuitBorders from "@/components/CircuitBorders";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,6 +33,7 @@ export default function RootLayout({
       <body className="bg-[#0a0a0a] text-[#ededed] overflow-x-hidden">
         <FluidBackground />
         <CustomCursor />
+        <CircuitBorders />
         {children}
         
       </body>
